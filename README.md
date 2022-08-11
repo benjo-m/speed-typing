@@ -1,1 +1,1 @@
-# speed-typing
+# Speed Typing
