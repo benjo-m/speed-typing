@@ -5,7 +5,7 @@ let btn = document.getElementById("getWordBtn");
 let language = document.getElementById("language")
 let word = document.getElementById("word")
 
-let time = 10;
+let time = 30;
 
 function countdown() {
     let timer = document.getElementById("timer");
@@ -13,7 +13,7 @@ function countdown() {
     timer.innerText = time;
     if (time == 0) {
         clearInterval(looper)
-        alert("your score: " + points)
+        alert("Your score: " + points)
         let restartBtn = document.createElement("button")
         restartBtn.setAttribute("id", "restartBtn")
         restartBtn.addEventListener("click", restartGame)
@@ -52,7 +52,7 @@ function clear() {
 }
 
 function restartTimer() {
-    time = 10;
+    time = 30;
     timer.textContent = time;
 }
 
