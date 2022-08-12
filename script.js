@@ -6,6 +6,8 @@ let language = document.getElementById("language")
 let word = document.getElementById("word")
 
 let time = 30;
+score.textContent = 0
+let points = 0;
 
 function countdown() {
     let timer = document.getElementById("timer");
@@ -25,9 +27,6 @@ function countdown() {
 let looper = setInterval(countdown, 1000)
 
 language.onchange = getWord;
-
-score.textContent = 0
-let points = 0;
 
 function correct() {
     if (word.textContent == input.value) {
@@ -75,4 +74,3 @@ function getWord() {
 }
 
 getWord()
-
