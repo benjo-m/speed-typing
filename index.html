@@ -10,10 +10,14 @@
 </head>
 <body>
     <h1>Speed Typing</h1><br>
-    <span>Time: </span><span id="timer">10</span>
-    <div id="container">
-    <form action="">
-        <p id="word"></p>
+    <div id="timerDiv">
+        <div>
+            <span>Time: </span><span id="timer">20</span>
+        </div>
+        <div>
+            <span>Score: </span><span id="score">0</span>
+        </div>
+        <div>
         <select id="language">
             <option value="en">English</option>
             <option value="de">German</option>
@@ -21,9 +25,16 @@
             <option value="it">Italian</option>
             <option value="zh">Chinese</option>
         </select>
+    </div>
+
+    </div>
+    
+    <div id="container">
+    <form action="">
+        <p id="word"></p>
+        
         <input type="text" name="" id="input" autofocus autocomplete="off">
         <button id="getWordBtn" hidden></button>
-        <p id="score"></p>
     </form>
 </div>
 </body>

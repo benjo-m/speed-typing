@@ -22,7 +22,7 @@ function countdown() {
     }
 }
 
-let looper = setInterval(countdown, 1000)
+// let looper = setInterval(countdown, 1000)
 
 language.onchange = getWord;
 
