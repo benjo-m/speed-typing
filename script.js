@@ -1,5 +1,3 @@
-// fetch("https://random-word-api.herokuapp.com/word?lang=de")
-
 let container = document.getElementById("container");
 let score = document.getElementById("score");
 let input = document.getElementById("input");
@@ -7,8 +5,23 @@ let btn = document.getElementById("getWordBtn");
 let language = document.getElementById("language")
 let word = document.getElementById("word")
 
-let timer = document.getElementById("timer");
-let time = 10;
+let time = 5;
+
+function countdown() {
+    let timer = document.getElementById("timer");
+    time--
+    timer.innerText = time;
+    if (time == 0) {
+        clearInterval(looper)
+        alert("your score: " + points)
+        let restartBtn = document.createElement("button")
+        restartBtn.addEventListener("click", restartGame)
+        restartBtn.textContent = "Restart"
+        container.appendChild(restartBtn)
+    }
+}
+
+let looper = setInterval(countdown, 1000)
 
 language.onchange = getWord;
 
@@ -20,6 +33,11 @@ function correct() {
         points++;
         score.textContent = points
     }
+}
+
+function restartGame() {
+    clear();
+    time = 30;
 }
 
 function clear() {
