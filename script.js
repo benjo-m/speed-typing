@@ -5,7 +5,7 @@ let btn = document.getElementById("getWordBtn");
 let language = document.getElementById("language")
 let word = document.getElementById("word")
 
-let time = 5;
+let time = 10;
 
 function countdown() {
     let timer = document.getElementById("timer");
@@ -15,6 +15,7 @@ function countdown() {
         clearInterval(looper)
         alert("your score: " + points)
         let restartBtn = document.createElement("button")
+        restartBtn.setAttribute("id", "restartBtn")
         restartBtn.addEventListener("click", restartGame)
         restartBtn.textContent = "Restart"
         container.appendChild(restartBtn)
@@ -37,7 +38,10 @@ function correct() {
 
 function restartGame() {
     clear();
-    time = 30;
+    restartTimer();
+    getWord();
+    document.getElementById("restartBtn").remove()
+    looper = setInterval(countdown, 1000)
 }
 
 function clear() {
@@ -45,6 +49,11 @@ function clear() {
     score.textContent = points;
     input.value = ""
     input.focus()
+}
+
+function restartTimer() {
+    time = 10;
+    timer.textContent = time;
 }
 
 function getWord() {
