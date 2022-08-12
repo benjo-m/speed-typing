@@ -5,6 +5,7 @@ let score = document.getElementById("score");
 let input = document.getElementById("input");
 let btn = document.getElementById("getWordBtn");
 let language = document.getElementById("language")
+let word = document.getElementById("word")
 
 let timer = document.getElementById("timer");
 let time = 10;
@@ -15,7 +16,7 @@ score.textContent = 0
 let points = 0;
 
 function correct() {
-    if (container.textContent == input.value) {
+    if (word.textContent == input.value) {
         points++;
         score.textContent = points
     }
@@ -33,12 +34,12 @@ function getWord() {
     .then(res => res.json())
     .then(data => {
         console.log(data);
-        container.textContent = data[0]
+        word.textContent = data[0]
         let counter = 1;
         btn.addEventListener("click", e => {
             e.preventDefault()
             correct();
-            container.textContent = data[counter];
+            word.textContent = data[counter];
             counter++
             input.value = ""
         })

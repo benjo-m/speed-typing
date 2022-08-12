@@ -9,5 +9,11 @@
 }
 
 form {
-    margin: 100px;
+    width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#word, #score {
+    padding: 10px;
 }
