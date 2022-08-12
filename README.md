@@ -1,5 +1,5 @@
 # Speed Typing
 
-Speed typing in browser game.
+Speed typing game.
 
 GitHub Pages: 
