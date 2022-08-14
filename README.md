@@ -2,4 +2,4 @@
 
 Speed typing game.
 
-GitHub Pages: 
+GitHub Pages: https://benjo-m.github.io/speed-typing/
