@@ -2,36 +2,37 @@ let container = document.getElementById("container");
 let score = document.getElementById("score");
 let input = document.getElementById("input");
 let btn = document.getElementById("getWordBtn");
-let language = document.getElementById("language")
-let word = document.getElementById("word")
+let language = document.getElementById("language");
+let word = document.getElementById("word");
 
 let time = 30;
-score.textContent = 0
+score.textContent = 0;
 let points = 0;
 
 function countdown() {
     let timer = document.getElementById("timer");
-    time--
+    time--;
     timer.innerText = time;
     if (time == 0) {
-        clearInterval(looper)
-        alert("Your score: " + points)
-        let restartBtn = document.createElement("button")
-        restartBtn.setAttribute("id", "restartBtn")
-        restartBtn.addEventListener("click", restartGame)
-        restartBtn.textContent = "Restart"
-        container.appendChild(restartBtn)
+        clearInterval(looper);
+        alert("Your score: " + points);
+        let restartBtn = document.createElement("button");
+        restartBtn.setAttribute("id", "restartBtn");
+        restartBtn.addEventListener("click", restartGame);
+        restartBtn.textContent = "Restart";
+        container.appendChild(restartBtn);
+        input.readOnly = true;
     }
 }
 
-let looper = setInterval(countdown, 1000)
+let looper = setInterval(countdown, 1000);
 
 language.onchange = getWord;
 
 function correct() {
     if (word.textContent == input.value) {
         points++;
-        score.textContent = points
+        score.textContent = points;
     }
 }
 
@@ -39,15 +40,16 @@ function restartGame() {
     clear();
     restartTimer();
     getWord();
-    document.getElementById("restartBtn").remove()
-    looper = setInterval(countdown, 1000)
+    input.readOnly = false;
+    document.getElementById("restartBtn").remove();
+    looper = setInterval(countdown, 1000);
 }
 
 function clear() {
     points = 0;
     score.textContent = points;
-    input.value = ""
-    input.focus()
+    input.value = "";
+    input.focus();
 }
 
 function restartTimer() {
@@ -60,17 +62,17 @@ function getWord() {
     .then(res => res.json())
     .then(data => {
         console.log(data);
-        word.textContent = data[0]
+        word.textContent = data[0];
         let counter = 1;
         btn.addEventListener("click", e => {
-            e.preventDefault()
+            e.preventDefault();
             correct();
             word.textContent = data[counter];
-            counter++
-            input.value = ""
+            counter++;
+            input.value = "";
         })
     })
-    clear()
+    clear();
 }
 
-getWord()
+getWord();
