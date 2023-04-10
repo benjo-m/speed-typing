@@ -2,4 +2,4 @@
 
 Speed typing game.
 
-GitHub Pages: https://benjo-m.github.io/speed-typing/
+Netlify: https://speed-typing-game-benjo-m.netlify.app/
