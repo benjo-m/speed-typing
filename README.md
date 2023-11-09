@@ -1,5 +1,5 @@
 # Speed Typing
 
-Speed typing game.
+Web application that tests you typing speed
 
-Live preview: https://speed-typing-game-benjo-m.netlify.app/
+Live: https://speed-typing-game-benjo-m.netlify.app/
